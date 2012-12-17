@@ -1,0 +1,17 @@
+@(jobs: List[Job])
+
+@main("Job List") {
+  <ul>
+    @for(job <- jobs){
+      <li>
+      @job.desc
+      </li>
+    }
+  </ul>
+
+  @helper.form(action = routes.JobsCreate.create) {
+  	<input type="text" name="desc" />
+  	<input type="submit" />
+  }
+    
+}
